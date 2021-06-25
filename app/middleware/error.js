@@ -1,3 +1,15 @@
-module.exports = function(err, req, res, next){
-  res.status(500).send('Something failed: ', err)
+const { GeneralError } = require('../utils/error')
+
+module.exports = function(err, req, res, next) {
+    if (err instanceof GeneralError) {
+        res.status(err.getCode()).json({
+            status: 'error',
+            message: err.message
+        })
+    }
+
+    res.status(500).json({
+        status: 'error',
+        message: err.message
+    })
 }

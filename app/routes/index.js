@@ -3,9 +3,10 @@ const about = require('../json/about.json')
 const router = express.Router()
 
 router.get('', async (req, res, next) => {
-    var err = Error()
-    err.status = 200
-    err.message = 'Welcome...'
+    const err = Error()
+    err.statusCode = 200
+    err.status = 'success'
+    err.message = 'Selamat datang...'
     err.data = about
 
     next(err)

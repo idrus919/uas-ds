@@ -1,12 +1,44 @@
 const express = require('express')
-const app = express()
+const router = express.Router()
 
-app.get('', function(req, res, next) {
-    var err = Error()
-    err.status = 404
-    err.message = 'Unable to find the requested resource'
+router.get('', function(req, res, next) {
+    const err = Error()
+    err.statusCode = 404
+    err.status = 'error'
+    err.message = 'Page not found'
 
     next(err)
+    return
 })
 
-module.exports = app
+router.post('', function(req, res, next) {
+    const err = Error()
+    err.statusCode = 404
+    err.status = 'error'
+    err.message = 'Page not found'
+
+    next(err)
+    return
+})
+
+router.put('', function(req, res, next) {
+    const err = Error()
+    err.statusCode = 404
+    err.status = 'error'
+    err.message = 'Page not found'
+
+    next(err)
+    return
+})
+
+router.delete('', function(req, res, next) {
+    const err = Error()
+    err.statusCode = 404
+    err.status = 'error'
+    err.message = 'Page not found'
+
+    next(err)
+    return
+})
+
+module.exports = router

@@ -2,5 +2,12 @@
     "host": "localhost",
     "user": "root",
     "password": "",
-    "database": "db_toko_elektronik"
+    "database": "db_toko_elektronik",
+    "dialect": "mysql",
+    "pool": {
+        "max": 5,
+        "min": 0,
+        "acquire": 30000,
+        "idle": 10000
+    }
 }

@@ -122,7 +122,7 @@ router.post('/:id', async (req, res, next) => {
             return
         }
 
-        var transactionId = `TR-${ticketId}`
+        var transactionId = `INV${ticketId}`
 
         const detailTransactionState = []
         var totalprice = 0
@@ -173,7 +173,7 @@ router.post('/:id', async (req, res, next) => {
                 return
             }
 
-            var creditId = `CR-${ticketId}`
+            var creditId = `CR${ticketId}`
 
             const detailCreditState = []
             var totalCredit = 0
